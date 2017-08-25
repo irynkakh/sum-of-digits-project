@@ -1,5 +1,6 @@
-package com.company;
+package test;
 
+import main.GetsNumbers;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
