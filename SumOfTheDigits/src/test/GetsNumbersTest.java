@@ -52,7 +52,7 @@ public class GetsNumbersTest {
     }
 
     @BeforeAll
-    public static void beforeAll_ini() {
+    public static void beforeAllMethod() {
         System.out.println("This will be executed before all methods");
 
     }
