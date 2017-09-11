@@ -1,8 +1,5 @@
 package test;
 
-
-
-//import org.junit.platform.commons.meta.API.Usage.Experimental;
 import main.GetsNumbers;
 import org.junit.jupiter.api.*;
 
@@ -10,7 +7,6 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTimeout;
-//import org.junit.platform.runner.JUnitPlatform;
 
 public class GetsNumbersTest {
 
@@ -78,18 +74,23 @@ public class GetsNumbersTest {
         System.out.println("This will be ignored");
     }
 
-     // @ParameterizedTest
-    /*@ValueSource(ints = {15, 30, 150})
+    /*@ParameterizedTest
+    @ValueSource(ints = {150, 30, 150})
     public void testmethod(int p) throws Exception {
         GetsNumbers getsNumbers = new GetsNumbers();
 
         assertEquals("15", getsNumbers.sumOdDigits(p));
          }*/
 
-   // @RunWith(JUnitPlatform.class)
-   // @IncludeEngines("junit-jupiter")
-   // @SelectPackages("...")
+    /*@RunWith(JUnitPlatform.class)
+    @IncludeEngines("junit-jupiter")
+    @SelectPackages("...")
+    public void testmethod2(int p) throws Exception {
+        GetsNumbers getsNumbers = new GetsNumbers();
 
+        assertEquals("15", getsNumbers.sumOdDigits(p));
+    }
+*/
 
 }
 
