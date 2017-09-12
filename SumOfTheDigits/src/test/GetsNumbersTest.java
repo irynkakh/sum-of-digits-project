@@ -2,6 +2,8 @@ package test;
 
 import main.GetsNumbers;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.time.Duration;
 
@@ -74,13 +76,13 @@ public class GetsNumbersTest {
         System.out.println("This will be ignored");
     }
 
-    /*@ParameterizedTest
+    @ParameterizedTest
     @ValueSource(ints = {150, 30, 150})
     public void testmethod(int p) throws Exception {
         GetsNumbers getsNumbers = new GetsNumbers();
 
         assertEquals("15", getsNumbers.sumOdDigits(p));
-         }*/
+    }
 
     /*@RunWith(JUnitPlatform.class)
     @IncludeEngines("junit-jupiter")
