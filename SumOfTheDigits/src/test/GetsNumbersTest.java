@@ -4,13 +4,29 @@ import main.GetsNumbers;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.platform.suite.api.SelectPackages;
+import org.junit.runner.RunWith;
 
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTimeout;
+@RunWith(JUnitPlatform.class)
+@SelectPackages("test")
 
 public class GetsNumbersTest {
+
+    @BeforeAll
+    public static void beforeAllMethod() {
+        System.out.println("This will be executed before all methods");
+
+    }
+
+    @AfterAll
+    public static void afterAllMethod() {
+        System.out.println("This will be executed after all methods");
+    }
 
     @Test
     @Tag("development")
@@ -18,11 +34,12 @@ public class GetsNumbersTest {
     public void testSumOfDigits() {
         GetsNumbers getsNumbers = new GetsNumbers();
         int result = getsNumbers.sumOdDigits(917);
-        assertEquals( 17, result);
+        assertEquals(17, result);
     }
+
     @Test
     @Tag("development")
-    public void sumOfDigitsNotExceed15Sec(){
+    public void sumOfDigitsNotExceed15Sec() {
         GetsNumbers getsNumbers = new GetsNumbers();
         assertTimeout(Duration.ofSeconds(15), () -> {
             getsNumbers.sumOdDigits(917);
@@ -32,7 +49,7 @@ public class GetsNumbersTest {
     @Test
     @Tag("development")
     @Tag("production")
-    public void sumOfDigitsExceed1Sec(){
+    public void sumOfDigitsExceed1Sec() {
 
         GetsNumbers getsNumbers = new GetsNumbers();
         assertTimeout(Duration.ofSeconds(1), () -> {
@@ -40,6 +57,7 @@ public class GetsNumbersTest {
             getsNumbers.sumOdDigits(999);
         }, "The sumofDigits method take more than 1 second");
     }
+
     @Test
     @Tag("development")
     public void testCountOfDigits() {
@@ -49,50 +67,31 @@ public class GetsNumbersTest {
         // int result = getsNumbers.sumOdDigits(2222);
     }
 
-    @BeforeAll
-    public static void beforeAllMethod() {
-        System.out.println("This will be executed before all methods");
-
-    }
-
-    @AfterAll
-    public static void afterAllMethod(){
-        System.out.println("This will be executed after all methods");
-    }
-
     @BeforeEach
     public void beforeEachMethod() {
         System.out.println("This will be executed before each method");
     }
 
     @AfterEach
-    public void afterEachMethod(){
+    public void afterEachMethod() {
         System.out.println("This will be executed after each method");
     }
 
     @Disabled
     @Test
-    public void testNotBeExecuted(){
+    public void testNotBeExecuted() {
         System.out.println("This will be ignored");
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {150, 30, 150})
+    @ValueSource(ints = {199, 991, 784})
     public void testmethod(int p) throws Exception {
         GetsNumbers getsNumbers = new GetsNumbers();
 
-        assertEquals("15", getsNumbers.sumOdDigits(p));
+        assertEquals(19, getsNumbers.sumOdDigits(p));
+
     }
 
-    /*@RunWith(JUnitPlatform.class)
-    @IncludeEngines("junit-jupiter")
-    @SelectPackages("...")
-    public void testmethod2(int p) throws Exception {
-        GetsNumbers getsNumbers = new GetsNumbers();
-
-        assertEquals("15", getsNumbers.sumOdDigits(p));
-    }
-*/
 
 }
 
