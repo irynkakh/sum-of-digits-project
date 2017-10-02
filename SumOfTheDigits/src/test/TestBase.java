@@ -1,6 +1,9 @@
 package test;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 
 public abstract class TestBase {
 
@@ -16,10 +19,15 @@ public abstract class TestBase {
     }
 
 
-    abstract void beforeEachMethod();
+    @BeforeEach
+    public void beforeEachMethod() {
+        System.out.println("This will be executed before each method");
+    }
 
 
-    abstract void afterEachMethod();
-
+    @AfterEach
+    public void afterEachMethod() {
+        System.out.println("This will be executed after each method");
+    }
 
 }

@@ -1,24 +1,28 @@
 package test;
 
 import org.junit.FixMethodOrder;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class Class4 extends TestBase{
+public class Class4 extends TestBase {
 
-    @Test
+
+    @Override
+    @BeforeEach
     public void beforeEachMethod() {
-        System.out.println("This will be executed before each method");
+        System.out.println("This will be executed before each method in class4");
     }
 
 
-    @Test
+    @Override
+    @AfterEach
     public void afterEachMethod() {
-        System.out.println("This will be executed after each method");
+        System.out.println("This will be executed after each method in class4");
     }
-
 
     @Test
     public void firstTest() {
