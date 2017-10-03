@@ -18,9 +18,8 @@ public class Class4 extends TestBase {
     }
 
 
-    @Override
     @AfterEach
-    public void afterEachMethod() {
+    public void afterEachMethodNew() {
         System.out.println("This will be executed after each method in class4");
     }
 
