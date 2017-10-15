@@ -7,6 +7,13 @@
     <groupId>com.sumofdigits.proj</groupId>
     <artifactId>sum-of-digits</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <junit.platform>1.0.0-M6</junit.platform>
+        <junit.jupiter>5.0.0-M6</junit.jupiter>
+        <harmcrest.lib>1.3</harmcrest.lib>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -20,11 +27,13 @@
         </plugins>
     </build>
 
+
+
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.0.0-M6</version>
+            <version>${junit.jupiter}</version>
         </dependency>
 
         <dependency>
@@ -36,13 +45,13 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-commons</artifactId>
-            <version>1.0.0-M6</version>
+            <version>${junit.platform}</version>
         </dependency>
 
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-engine</artifactId>
-            <version>1.0.0-M6</version>
+            <version>${junit.platform}</version>
         </dependency>
 
         <dependency>
@@ -54,25 +63,25 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite-api</artifactId>
-            <version>1.0.0-M6</version>
+            <version>${junit.platform}</version>
         </dependency>
 
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-runner</artifactId>
-            <version>1.0.0-M6</version>
+            <version>${junit.platform}</version>
         </dependency>
 
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-launcher</artifactId>
-            <version>1.0.0-M6</version>
+            <version>${junit.platform}</version>
         </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.0.0-M6</version>
+            <version>${junit.jupiter}</version>
         </dependency>
 
         <dependency>
@@ -90,13 +99,13 @@
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
-            <version>1.3</version>
+            <version>${harmcrest.lib}</version>
         </dependency>
 
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-core</artifactId>
-            <version>1.3</version>
+            <version>${harmcrest.lib}</version>
         </dependency>
 
         <dependency>
@@ -108,7 +117,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.0.0-M6</version>
+            <version>${junit.jupiter}</version>
         </dependency>
 
     </dependencies>
