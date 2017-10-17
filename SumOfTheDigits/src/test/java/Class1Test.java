@@ -1,4 +1,4 @@
-package test;
+package test.java;
 
 import main.GetsNumbers;
 import org.junit.jupiter.api.Assertions;
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Class1 extends TestBase {
+public class Class1Test extends TestBaseTest {
 
 
     @Test
