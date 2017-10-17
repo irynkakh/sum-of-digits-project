@@ -7,13 +7,16 @@
     <groupId>com.sumofdigits.proj</groupId>
     <artifactId>sum-of-digits</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <junit.platform>1.0.0-M6</junit.platform>
         <junit.jupiter>5.0.0-M6</junit.jupiter>
         <harmcrest.lib>1.3</harmcrest.lib>
     </properties>
-
     <build>
         <sourceDirectory>src</sourceDirectory>
         <resources>
@@ -21,52 +24,73 @@
                 <directory>src/test</directory>
                 <filtering>false</filtering>
                 <includes>
-                    <include>**/Class1.java</include>
-                    <include>**/Class2.java</include>
-                    <include>**/Class3.java</include>
-                    <include>**/Class4.java</include>
+                    <include>**/Test*.java</include>
+                    <include>**/*Test.java</include>
+                    <include>**/*Tests.java</include>
+                    <include>**/*TestCase.java</include>
                 </includes>
             </resource>
         </resources>
-        <pluginManagement>
+    <plugins>
 
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5</version>
-                <configuration>
-                    <source/>
-                    <target/>
-                </configuration>
-            </plugin>
-            <plugin>
+     <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.19.1</version>
+            <dependencies>
+                <dependency>
+                    <groupId>org.junit.platform</groupId>
+                    <artifactId>junit-platform-surefire-provider</artifactId>
+                    <version>1.0.0-M3</version>
+                </dependency>
+            </dependencies>
+        </plugin>
+
+        <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.19</version>
+            <dependencies>
+                <dependency>
+                    <groupId>org.junit.platform</groupId>
+                    <artifactId>junit-platform-surefire-provider</artifactId>
+                    <version>1.0.0-M3</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.junit.jupiter</groupId>
+                    <artifactId>junit-jupiter-engine</artifactId>
+                    <version>5.0.0-M3</version>
+                </dependency>
+            </dependencies>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-verifier-plugin</artifactId>
+            <version>1.1</version>
+            <configuration>
+                <verificationFile>src/test/verifier/verifications-test.xml</verificationFile>
+            </configuration>
+            <executions>
+                <execution>
+                    <id>main</id>
+                    <phase>verify</phase>
+                    <goals>
+                        <goal>verify</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
 
 
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.20.1</version>
-                <inherited>true</inherited>
-                <configuration>
-                    <suiteXmlFile>tests.xml</suiteXmlFile>
-                </configuration>
-            </plugin>
-
-
-
-
-
-        </plugins>
-        </pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-        </plugins>
+    </plugins>
     </build>
 
 
@@ -120,6 +144,7 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.jupiter}</version>
+            <scope>test</scope>
         </dependency>
 
 
@@ -128,6 +153,7 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -153,6 +179,17 @@
             <artifactId>junit-jupiter-params</artifactId>
             <version>${junit.jupiter}</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.0.1</version>
+        </dependency>
+
 
     </dependencies>
 

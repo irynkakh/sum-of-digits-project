@@ -1,4 +1,4 @@
-package test;
+package test.java;
 
 import main.GetsNumbers;
 import org.junit.jupiter.api.Test;

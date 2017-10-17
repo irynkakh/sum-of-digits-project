@@ -1,11 +1,11 @@
-package test;
+package test.java;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-public abstract class TestBase {
+public abstract class TestBaseTest {
 
     @BeforeAll
     public static void beforeAllMethod() {

@@ -1,4 +1,4 @@
-package test;
+package test.java;
 
 import org.junit.FixMethodOrder;
 import org.junit.jupiter.api.AfterEach;
@@ -8,7 +8,7 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class Class4 extends TestBase {
+public class Class4Test extends TestBaseTest {
 
 
     @Override
