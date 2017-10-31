@@ -1,6 +1,3 @@
-package test.java;
-
-import main.GetsNumbers;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;

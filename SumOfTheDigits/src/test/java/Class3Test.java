@@ -1,5 +1,3 @@
-package test.java;
-
 import org.junit.FixMethodOrder;
 import org.junit.jupiter.api.Test;
 import org.junit.runners.MethodSorters;
