@@ -40,10 +40,18 @@
                         <groupId>org.junit.platform</groupId>
                         <artifactId>junit-platform-surefire-provider</artifactId>
                         <version>${junit.platform.version}</version>
+
+
                     </dependency>
 
 
                 </dependencies>
+                <configuration>
+                    <excludes>
+                        <exclude>**/Class1Test.java</exclude>
+                    </excludes>
+
+                </configuration>
             </plugin>
         </plugins>
     </build>
