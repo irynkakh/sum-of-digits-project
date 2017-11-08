@@ -2,7 +2,7 @@ package suite.tests;
 
 import org.junit.jupiter.api.Test;
 
-public class ThirdScopeTest {
+public class ThirdScope {
 
     @Test
     public void ThirdClassFirstMethod() {
