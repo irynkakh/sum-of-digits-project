@@ -1,5 +1,3 @@
-package main;
-
 public class GetsNumbers {
 
     public int count;
